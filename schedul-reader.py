@@ -7,12 +7,14 @@ def _read(filepath):
     return load_wb
 
 
-def regist_schedule_tmp():
-    _excel2Dic()
+def regist_schedule_tmp(filepath):
+    _excel2Dic(filepath)
 
 # 엑셀파일에서 읽어서, schedule_tmp 테이블로 입력
-def _excel2Dic():
-    load_wb = _read("C:/Users/gusfo/OneDrive/2019.11.24-2020.01.03.xlsx")
+def _excel2Dic(filepath):
+
+    # load_wb = _read("C:/Users/gusfo/OneDrive/2019.11.24-2020.01.03.xlsx")
+    load_wb = _read(filepath)
     dic_list = []
 
     load_ws = load_wb['Sheet1']
@@ -73,5 +75,7 @@ def booking():
 
 
 if __name__ == '__main__':
-    # regist_schedule_tmp()
+    # filepath = "C:/Users/gusfo/OneDrive/2019.11.24-2020.01.03.xlsx"
+    filepath = "C:\\Users\\user\\OneDrive\\오병이어교회\\2020.04.12-2020.05.16.xlsx"
+    regist_schedule_tmp(filepath)
     booking()
